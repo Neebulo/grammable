@@ -71,3 +71,6 @@ end
 
 # create form
 gem 'simple_form'
+
+# login
+gem 'devise'
