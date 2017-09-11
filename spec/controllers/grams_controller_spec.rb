@@ -15,11 +15,7 @@ RSpec.describe GramsController, type: :controller do
     end
 
     it "should successfully show the new form" do
-      user = User.create(
-        email:                 'fakeuser@gmail.com',
-        password:              'secretPassword',
-        password_confirmation: 'secretPassword'
-      )
+      user = FactoryGirl.create(:user)
       sign_in user
 
       get :new
