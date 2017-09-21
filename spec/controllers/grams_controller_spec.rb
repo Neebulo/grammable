@@ -10,7 +10,8 @@ RSpec.describe GramsController, type: :controller do
       end
 
       it "should return a 404 error message if the gram is not found" do
-
+        get :edit, params: { id: 'SWAG' }
+        expect(response).to have_http_status(:not_found)
       end
     end
 
