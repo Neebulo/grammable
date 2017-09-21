@@ -5,6 +5,7 @@ RSpec.describe GramsController, type: :controller do
   describe "grams#update action" do
     it "should allow users to successfully update grams" do
       gram = FactoryGirl.create(:gram, message: "Initial Value")
+      patch :update, params: { id: gram.id, gram: { message: 'Changed' } }
 
     end
 
