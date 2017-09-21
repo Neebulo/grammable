@@ -11,6 +11,10 @@ class GramsController < ApplicationController
     end
   end
 
+  def edit
+    @gram = Gram.find_by_id(params[:id])
+  end
+
    def new
     @gram = Gram.new
   end
