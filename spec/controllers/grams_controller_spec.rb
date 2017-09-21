@@ -7,6 +7,8 @@ RSpec.describe GramsController, type: :controller do
       gram = FactoryGirl.create(:gram, message: "Initial Value")
       patch :update, params: { id: gram.id, gram: { message: 'Changed' } }
       expect(response).to redirect_to root_path
+      gram.reload
+      expect(gram.message).to eq "Changed"
 
     end
 
